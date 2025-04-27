@@ -14,9 +14,9 @@ LOCATION = "us-central1"  # ✅ Use supported region!
 # Initialize Vertex AI
 vertexai.init(project=PROJECT_ID, location=LOCATION)
 
+from google.generativeai import GenerativeModel
+
 def generate_rag_response(prompt):
-    model = GenerativeModel("gemini-1.5-pro")
-    response = model.generate_content(
-        f"Based on the career guidance and HerKey resources, answer this:\n{prompt}"
-    )
+    model = GenerativeModel("gemini-1.5-pro")  # Using free Gemini 1.5
+    response = model.generate_content(f"HerKey Guidance: {prompt}")
     return response.text
