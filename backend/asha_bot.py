@@ -5,7 +5,6 @@ import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 
-from utils.dialogflow_handler import detect_intent_text
 from utils.helpers import (
     load_job_listings,
     load_session_details,
@@ -93,12 +92,7 @@ def generate_response(prompt):
         if results:
             return "🤝 Potential mentors:\n" + "\n".join([f"- {m['name']} ({m['expertise']})" for m in results])
 
-    try:
-        rag_response = detect_intent_text(prompt)
-        if rag_response:
-            return rag_response
-    except Exception as e:
-        print("Dialogflow fallback error:", e)
+   
 
     # Fallback to Gemini LLM
     try:
