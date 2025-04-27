@@ -1,3 +1,4 @@
 streamlit
 google-generativeai
 python-dotenv
+google-cloud-dialogflow==3.0.2  # Or latest version
