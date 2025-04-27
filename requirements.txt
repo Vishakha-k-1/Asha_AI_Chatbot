@@ -1,4 +1,4 @@
 streamlit
 google-generativeai
 python-dotenv
-google-cloud-dialogflow==2.41.1
+google-cloud-dialogflow==2.40.0
